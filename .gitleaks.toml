@@ -2,3 +2,7 @@ title = "AMRS source secret scanning"
 [extend]
 useDefault = true
 
+[allowlist]
+paths = [
+  '''FILE_MANIFEST\.json''',
+]
