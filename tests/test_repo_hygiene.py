@@ -29,6 +29,18 @@ def test_private_or_unsafe_paths_are_never_allowed(name):
     assert not allowed(name)
 
 
+@pytest.mark.parametrize(
+    "name",
+    [
+        "AMRS-QR-Trust.cer",
+        "FILE_MANIFEST.json",
+        "Offline_Wheels/requests-2.34.2-py3-none-any.whl",
+    ],
+)
+def test_release_allowlist_accepts_repository_artifacts(name):
+    assert allowed(name)
+
+
 def test_tracked_private_file_refuses_release_before_read(tmp_path):
     # No file is created: the boundary must reject it before inspecting file contents.
     with pytest.raises(ValueError, match="allowlist"):

@@ -10,6 +10,8 @@ from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
 TOP = {
+    "AMRS-QR-Trust.cer",
+    "FILE_MANIFEST.json",
     "main.py",
     "README.md",
     "START_HERE.txt",
@@ -52,6 +54,12 @@ def allowed(name):
         return True
     if len(path.parts) > 1 and path.parts[0] in {"amrs", "tests", "tools"}:
         return path.suffix == ".py" and "__pycache__" not in path.parts
+    if (
+        len(path.parts) == 2
+        and path.parts[0] == "Offline_Wheels"
+        and path.suffix == ".whl"
+    ):
+        return True
     if len(path.parts) > 1 and path.parts[0] == "docs":
         return path.suffix == ".md"
     return (
