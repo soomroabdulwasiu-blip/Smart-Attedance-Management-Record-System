@@ -1,0 +1,87 @@
+:root {
+  color-scheme: light;
+  --ink: #14233a;
+  --muted: #50647b;
+  --blue: #1c50b6;
+  --mint: #a9f2d0;
+  --green: #176846;
+  font: 16px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; color: var(--ink); background: #eaf1f9; }
+main { width: min(100% - 24px, 480px); margin: clamp(14px, 4vh, 44px) auto; }
+.hero {
+  background: linear-gradient(132deg, #0e1d35, #194b77);
+  color: white; border-radius: 22px 22px 0 0; padding: 24px;
+}
+.brand { font-weight: 800; letter-spacing: .09em; color: var(--mint); }
+.brand span {
+  display: inline-grid; place-items: center; width: 32px; height: 32px; margin-right: 7px;
+  border: 1px solid #94d7be; border-radius: 9px;
+}
+h1 { font-size: clamp(25px, 6vw, 34px); line-height: 1.1; margin: 16px 0 9px; }
+.hero p { color: #e1ebf8; margin: 0; overflow-wrap: anywhere; }
+.date { display: block; margin-top: 4px; font-size: .87rem; color: #c4dcf4; }
+.steps {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 0; padding: 14px 18px; gap: 8px; list-style: none;
+  background: #f2f7ff; border-bottom: 1px solid #dce6f3; font-size: .81rem;
+}
+.steps li { color: var(--muted); display: flex; align-items: center; gap: 5px; }
+.steps b { border-radius: 50%; background: #e0e9f6; padding: 2px 7px; }
+.steps [aria-current] { color: #0f429e; font-weight: 750; }
+.steps [aria-current] b { color: #fff; background: var(--blue); }
+.workspace {
+  background: white; border-radius: 0 0 22px 22px; padding: clamp(17px, 5vw, 26px);
+  box-shadow: 0 14px 35px #0c234817;
+}
+h2 { margin: 0 0 6px; font-size: 1.38rem; line-height: 1.25; }
+p { margin: 0 0 16px; color: var(--muted); }
+label { display: block; font-weight: 650; margin-top: 14px; }
+input {
+  margin-top: 5px; width: 100%; min-height: 48px; padding: 10px 12px;
+  border: 1px solid #aabdd7; border-radius: 10px; background: #fbfdff;
+  font: inherit; color: var(--ink);
+}
+button {
+  min-height: 49px; width: 100%; margin-top: 16px; border: 0; border-radius: 11px;
+  background: var(--blue); color: white; font: inherit; font-weight: 750; cursor: pointer;
+}
+button:disabled { opacity: .60; cursor: wait; }
+:is(button,input):focus-visible { outline: 3px solid #528bec; outline-offset: 3px; }
+.secondary { color: var(--blue); background: #edf4ff; margin-top: 6px; }
+.preview {
+  margin: 12px 0; position: relative; overflow: hidden; border-radius: 14px;
+  aspect-ratio: 4/3; background: #0b1729;
+}
+video, #still { display: block; width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); }
+#still { position: absolute; inset: 0; }
+.face-guide {
+  position: absolute; inset: 13% 28%; border: 2px dashed #e2f2ffcc;
+  border-radius: 49%; pointer-events: none;
+}
+.preview.has-face .face-guide { visibility: hidden; }
+.face-box {
+  position: absolute; border: 3px solid var(--outline, #f7cc6e); border-radius: 9px;
+  pointer-events: none; box-shadow: 0 0 0 1px #1118;
+}
+.face-box span {
+  position: absolute; left: 0; bottom: 100%; background: var(--outline, #f7cc6e);
+  color: #132139; border-radius: 5px; padding: 3px 7px; font-size: .72rem;
+  font-weight: 800; white-space: nowrap;
+}
+.face-box.mismatch { --outline: #ff7378; }
+.face-box.verified { --outline: #67efa6; }
+.preview.verified-preview { aspect-ratio: auto; height: min(31vh, 220px); }
+.pose { padding: 9px 12px; color: #153a77; background: #edf4ff; font-weight: 750; border-radius: 9px; }
+.small, footer { font-size: .83rem; color: var(--muted); }
+.small { margin-top: 11px; margin-bottom: 0; }
+.status { margin: 12px 0 0; overflow-wrap: anywhere; }
+.status:empty { display: none; }
+.status.error { color: #9e2f29; }
+.confirmed { background: #eaf9f0; color: var(--green); text-align: center; border-radius: 12px; padding: 18px; }
+.confirmed p { color: #285741; margin: 0; }
+.check { display: block; font-weight: 900; font-size: 1.85rem; margin-bottom: 3px; }
+#mark { background: var(--green); }
+footer { text-align: center; padding: 15px 9px; }

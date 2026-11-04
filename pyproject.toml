@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=84"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amrs-attendance"
+version = "0.3.0"
+description = "Windows desktop attendance with native Oracle and modular cameras"
+requires-python = ">=3.14,<3.15"
+dynamic = ["dependencies"]
+
+[project.scripts]
+amrs = "amrs.gui:main"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.in"]}
+
+[tool.setuptools.packages.find]
+include = ["amrs*"]
+
+[tool.setuptools.package-data]
+amrs = ["qr_assets/*.html", "qr_assets/*.css", "qr_assets/*.js"]
+
+[tool.pytest.ini_options]
+markers = ["oracle: requires disposable native Oracle schemas", "legacy: isolated historical scenario wrapper", "gui: Qt interface workflow"]
+
+[tool.coverage.run]
+source = ["amrs"]
+
+[tool.coverage.report]
+show_missing = false
+skip_covered = true

@@ -1,0 +1,43 @@
+AMRS PYTHON UPDATED
+===================
+
+1. Extract the full ZIP. Open AMRS_Quick_QR_Attendance in VS Code.
+2. In the PowerShell terminal run .\run.bat
+3. On first run choose an Admin name, email, department and password.
+   Password typing is hidden. This is the AMRS login you will use in the app.
+4. Next time run .\run.bat and sign in. Oracle connects in the background.
+
+This package targets this laptop's Windows x64 Python 3.14 and running
+local Oracle Free listener and FREEPDB1 service. SQL*Plus and a Windows
+user authorized for local Oracle administration are needed the first time.
+The launcher prepares its Python environment from the included offline wheels.
+
+The first run creates a separate Oracle owner/runtime pair and starts with
+an empty roster. Your existing AMRS database and records stay separate.
+Runtime credentials are generated and encrypted for your Windows account.
+The new workspace and local face data are separate from the old installation.
+There is no default Admin password. The account you choose is for this copy.
+
+If the Oracle service is down, start the existing Oracle service and listener
+and run the command again. If local Oracle administration fails, ask your DBA
+to check SQL*Plus and OS authentication. The launcher can locate the existing
+Oracle Free installation or use AMRS_LOCAL_SQLPLUS as its executable path.
+
+Application source is in amrs/, Oracle schema scripts in db/schema/,
+and reference documentation in docs/. Use these start steps for this package.
+
+ADMIN PROFILE
+=============
+Sign in as Admin and open Account. To edit the login email, enter the new
+email and your current password, then click Save profile. Use the new email
+on future logins. This folder uses your existing saved AMRS local workspace.
+
+QUICK QR ATTENDANCE
+===================
+Open QR Attendance. If you previously used the old one-IP classroom certificate,
+select HTTPS setup > Create reusable classroom certificate once. Save settings and
+have authorized test phones trust only the exported public AMRS-QR-Trust.cer.
+Later, Generate QR reuses the classroom trust and selects an available port.
+Scan the newest QR, enter roll number and enrollment password, then tap Verify face.
+Follow the front camera prompt. Tap Mark attendance after the green box appears.
+See docs/SECURE_QR_SETUP.md. Your existing saved Oracle workspace is reused.

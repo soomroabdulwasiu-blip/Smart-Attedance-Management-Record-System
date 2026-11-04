@@ -1,0 +1,43 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+
+# Private runtime data and credentials
+data/
+oracle-local.bat
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.wallet
+wallet/
+*.log
+logs/
+*.sqlite*
+*.db
+
+# Model binaries are verified downloads
+*.onnx
+
+# Generated artifacts
+build/
+dist/
+artifacts/
+*.zip
+*.exe
+*.msi
+*.egg-info/
+.idea/
+.vscode/
+

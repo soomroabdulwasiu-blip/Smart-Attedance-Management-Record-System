@@ -1,0 +1,4 @@
+title = "AMRS source secret scanning"
+[extend]
+useDefault = true
+

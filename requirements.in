@@ -1,0 +1,11 @@
+numpy>=2.0
+opencv-python==5.0.0.93
+PySide6-Essentials==6.12.0
+oracledb>=3.0
+bcrypt>=4.0
+flask>=3.1.3,<4
+qrcode[pil]>=8.0
+requests>=2.34.2,<3
+urllib3>=2.8,<3
+Werkzeug>=3.1.9,<4
+certifi>=2026.10.23
