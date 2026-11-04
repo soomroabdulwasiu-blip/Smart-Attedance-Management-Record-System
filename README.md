@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AMRS desktop attendance
 
 Continue development in this checkout. Python 3.14 x64, PySide6 and native Oracle remain the application stack. The separate Downloads installation has not been replaced.
@@ -25,3 +26,7 @@ Use `requirements.lock.txt` with `--require-hashes` for the verified Windows/Pyt
 `python purge_inactive_records.py` now previews only. Execution needs explicit confirmation, administrator authentication and a fresh backup/restore approval tied to the exact preview. Do not run production cleanup during setup.
 
 This is an integration-tested development/pilot candidate, not a production certification. Physical classroom accuracy, liveness protection, cross-user/server biometric custody, real hardware acceptance, live Gmail delivery, signed deployment and institutional governance are not established merely by automated tests. See the final engineering/testing report for measured results and remaining limits.
+=======
+# Smart-Attedance-Management-Record-System
+Smart Attendance Management Record System (AMRS) is a secure desktop application featuring multi-face recognition, QR code-based attendance with facial verification, manual attendance, role-based dashboards, course management, real-time email password recovery, and attendance reporting.
+>>>>>>> 2871bb6f8e14301698ab02e68bbd7e82e471f783
